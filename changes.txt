@@ -1,0 +1,16 @@
+Changes implemented in patch 1.2
+
+1. Removed undefined datatype from attributes after criticism.
+2. I got criticized for deviating from domain-model naming conventions regarding Authentication calss beeing to software specific. 
+Considering this and conventions about what is actually necessary/worthwhile to include in a strict domain-model I concluded removing the Athentication class completely would be the preferred solution.
+My interpretation of the boat-club domain is that user authentication is a valid concetual part, but rather a design of how to implement distinguishable users and obtaining secure software solutions.
+3. Added attribute for membership fee, since it is clearly stated in the problem description under primary actors and register boat use-case and therefore part of the requirements for passing grade 2.
+
+Changes implemented in patch 1.3
+Added noteworthy classes, associations and attributes regarding use case 2, 3, 7, 9, 13 and 14, and associations to classes in model 1.2. I tried to keep the model concise, 
+not overextended or to detailed but enough to facilitate a conceptual understanding and to give a domain-overview. 
+I intentionally left out supporting- and offstage actors in an attempt to delimit the model to the boat-club itself, not the domain of the boat-club and it's relations to other domains, regardless how important.
+
+1. Divided CalendarEvent class into a Calendar class and Event class for SOC reasons.
+2. Added BoatDescription class to differentiate between the physical boat and descriptions/data managed by the user and used in booking process.
+3. Added Booking class to complete abstraction of booking-/assignment of berths.
