@@ -19,6 +19,8 @@ namespace BlackJack.controller
                 a_view.DisplayGameOver(a_game.IsDealerWinner());
             }
 
+            //Todo: Remove the bad, hidden, dependency between the controller and view (new game, hit, stand)
+            //view determine input validation? View use model instead of return System.Console.In.Read();? 
             int input = a_view.GetInput();
 
             if (input == 'p')
