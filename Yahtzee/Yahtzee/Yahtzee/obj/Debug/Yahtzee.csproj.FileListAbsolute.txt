@@ -5,3 +5,12 @@ C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\Yahtzee\Yahtzee\Yahtz
 C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.csproj.CoreCompileInputs.cache
 C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.exe
 C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.pdb
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\bin\Debug\Yahtzee.exe.config
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.exe
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.pdb
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\bin\Debug\Yahtzee.exe
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\bin\Debug\Yahtzee.pdb
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.csprojResolveAssemblyReference.cache
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\obj\Debug\Yahtzee.csproj.CoreCompileInputs.cache
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Johan\SkolaProgrammering\Webbprogrammerare\1dv607\1DV607portfolio\Yahtzee\Yahtzee\Yahtzee\bin\Debug\Newtonsoft.Json.xml

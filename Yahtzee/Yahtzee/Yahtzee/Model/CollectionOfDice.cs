@@ -23,11 +23,14 @@ namespace Yahtzee.Model
         public List<Dice> Die { get; private set; }
 
 
-        public void Roll()
+        public void Roll(bool[] dieToRoll)
         {
             foreach (Dice dice in Die)
             {
-                dice.Roll();
+                if (dieToRoll[dice.Id-1])
+                {
+                    dice.Roll();
+                }
             }
         }
         public int GetMaxNumberOfSameValues()

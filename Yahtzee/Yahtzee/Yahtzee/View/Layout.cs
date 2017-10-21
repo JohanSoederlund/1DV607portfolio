@@ -41,6 +41,7 @@ namespace Yahtzee.View
 
         public void RenderScore(Score score)
         {
+            //Console.WriteLine("Hello " + name + ", new round!\nRoll die enter (Y):");
 
         }
 
@@ -61,6 +62,59 @@ namespace Yahtzee.View
                 idAndValueOutput += "Dice number: " + dice.Id + "     Value: " + dice.Value + "\n";
             }
             Console.WriteLine(idAndValueOutput);
+
+        }
+
+        public bool[] GetDieToRoll()
+        {
+            bool[] dieToRoll = { };
+            bool getInput = true;
+            while (getInput)
+            {
+                dieToRoll = new bool[]{ false, false, false, false, false };
+                Console.WriteLine("Select die to roll på entering the id numbers of your choosen die e.g.(1 2 3 5), or (0) to stand");
+                string input = Console.ReadLine();
+                string[] dieNumbers = input.Split(' ');
+                getInput = false;
+                //Check if player stand
+                if (Int32.TryParse(dieNumbers[0], out int val) && val == 0)
+                {
+                    return dieToRoll;
+                }
+                for (int i = 0; i < dieNumbers.Length; i++)
+                {
+                    Console.WriteLine(dieNumbers[i]);
+                    if (Int32.TryParse(dieNumbers[i], out int index) && index >= 1 && index <= 5)
+                    {
+                        dieToRoll[index-1] = true;
+                    } else
+                    {
+                        Console.WriteLine("Invalid input");
+                        getInput = true;
+                        break;
+                    }
+                }
+            }
+            return dieToRoll;
+        }
+
+        public Categorie RenderCategorie(bool[] usedCategories)
+        {
+            int enumLength = Enum.GetNames(typeof(Categorie)).Length;
+            string output = "Select number categorie from this list e.g.(3): \n";
+            for (int i = 0; i < enumLength; i++)
+            {
+                output += "(" + i + ") " + Enum.GetName(typeof(Categorie), i) + "\n";
+            }
+            while(true)
+            {
+                Console.WriteLine(output);
+                if (Int32.TryParse(Console.ReadLine(), out int value) && value >= 0 && value < enumLength)
+                {
+                    return (Categorie)value;
+                }
+                Console.WriteLine("Invalid input");
+            }
         }
 
     }

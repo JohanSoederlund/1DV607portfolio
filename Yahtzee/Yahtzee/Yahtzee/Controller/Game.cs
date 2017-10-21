@@ -12,18 +12,21 @@ namespace Yahtzee.Controller
     class Game
     {
         private DataBase dataBase;
-        
         private List<Player> players;
         private Rules rules;
         private CollectionOfDice collectionOfDice;
 
         private Layout layout;
 
+
         public Game()
         {
+            
             InitGame();
             RunGame();
         }
+
+        private bool[] DieToRoll { get; set; }
 
         private void InitGame()
         {
@@ -50,21 +53,38 @@ namespace Yahtzee.Controller
             {
                 if (layout.RenderRound(player.Name))
                 {
-                    collectionOfDice.Roll();
+                    DieToRoll = new bool[] { true, true, true, true, true };
+
+                    collectionOfDice.Roll(DieToRoll);
                     layout.RenderRoll(collectionOfDice);
+                    DieToRoll = layout.GetDieToRoll();
+
+                    collectionOfDice.Roll(DieToRoll);
+                    layout.RenderRoll(collectionOfDice);
+                    DieToRoll = layout.GetDieToRoll();
+
+                    collectionOfDice.Roll(DieToRoll);
+                    layout.RenderRoll(collectionOfDice);
+
+                    Categorie categorieToUse = layout.RenderCategorie(player.Score.UsedCategories);
+                    
+                    if (categorieToUse == Categorie.ThreeOfAKind)
+                    {
+                        player.Score.ScoreCard[(int)categorieToUse] = rules.ThreeOfAKind(collectionOfDice);
+                        player.Score.UsedCategories[(int)categorieToUse] = true;
+                        //layout.RenderScore(player.Score.GetTotalScore());
+                    }
+
+                    
+
                 }
             }
-            
+
+            dataBase.SaveToFile(players);
+            players = dataBase.GetFromFile();
+
         }
     }
 }
 
 
-/*
- * 
- * foreach (Dice dice in die)
-            {
-                dice.roll();
-                Console.WriteLine("DICE   " + dice.Id + "   " + dice.Value);
-            }
- */

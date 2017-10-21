@@ -9,7 +9,6 @@ namespace Yahtzee.Model
     class Score
     {
 
-        private int score;
         public Score()
         {
             UsedCategories = new bool[Enum.GetNames(typeof(Categorie)).Length];
@@ -21,11 +20,27 @@ namespace Yahtzee.Model
             }
         }
 
+        public Score(int[] scores, bool[] usedCategories)
+        {
+            UsedCategories = usedCategories;
+            ScoreCard = scores;
+        }
+
+        public int GetTotalScore()
+        {
+            int totalScore = 0;
+            for (int i = 0; i < ScoreCard.Length; i++)
+            {
+                totalScore += ScoreCard[i];
+            }
+            return totalScore;
+        }
+
         public int[] ScoreCard { get; private set; }
 
         public bool[] UsedCategories { get; private set; }
 
-
+        //public Add
     }
 }
 
