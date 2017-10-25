@@ -12,10 +12,18 @@ namespace Yahtzee.Model
         {
             Score = new Score();
         }
+        /*
         public Player(string name)
         {
             Name = name;
             Score = new Score();
+            IsRobot = false;
+        }*/
+        public Player(string name, bool robot = false)
+        {
+            Name = name;
+            Score = new Score();
+            IsRobot = robot;
         }
 
         public Player(string name, int[] scores, bool[] usedCategories)
@@ -27,5 +35,7 @@ namespace Yahtzee.Model
         public string Name { get; set; }
 
         public Score Score { get; private set; }
-    }
+
+        public bool IsRobot{ get; private set; }
+}
 }

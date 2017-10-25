@@ -9,7 +9,7 @@ namespace Yahtzee.Model
 {
     class CollectionOfDice
     {
-        //private List<Dice> die;
+       
         public CollectionOfDice()
         {
             Die = new List<Dice>();
@@ -33,14 +33,30 @@ namespace Yahtzee.Model
                 }
             }
         }
-        public int GetMaxNumberOfSameValues()
+
+        public int[] GetDie()
+        {
+            int[] dieValues = { 0, 0, 0, 0, 0 };
+            int index = 0;
+            foreach (Dice dice in Die)
+            {
+                dieValues[index++] = dice.Value;
+            }
+            return dieValues;
+        }
+        public int[] GetNumberOfDiceFaceValue()
         {
             int[] dieValues = { 0, 0, 0, 0, 0, 0 };
             foreach (Dice dice in Die)
             {
                 dieValues[dice.Value - 1]++;
             }
-            // Return totsl value if at kleast three dice of same, else 0
+            return dieValues;
+        }
+        public int GetMaxNumberOfSameValues()
+        {
+            // Return total value if at least three dice of same, else 0
+            int[] dieValues = GetNumberOfDiceFaceValue();
             int highestNumberOfSame = 0;
             for (int i = 0; i < 6; i++)
             {
